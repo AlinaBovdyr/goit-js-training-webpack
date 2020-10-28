@@ -1,0 +1,64 @@
+.features {
+    @extend %container;
+    @extend %containerPadding;
+
+    &-list {
+        @extend %list;
+
+        @media screen and (min-width: $tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -15px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            margin: 0;
+            justify-content: space-between;
+        }
+    }
+
+    &-item {
+        margin-bottom: 30px;
+
+        @media screen and (min-width: $tablet) {
+            width: calc((100% - 2 * 30px) / 2);
+            margin: 15px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            width: calc((100% - 3 * 30px) / 4);
+            margin: 0;
+        }      
+    }
+
+    & .text {
+        margin: 0;
+    }
+}
+
+.hidden-title {
+    @extend %visually-hidden;
+}
+
+.icon-box {
+    @include flexCenter;
+    margin-bottom: 30px;
+    height: 120px;
+  
+    background-color: $secondary-background-color;
+}
+
+.features-title {
+    @extend %primary-title;
+
+    margin-bottom: 10px;
+  
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    text-align: center; 
+
+    @media screen and (min-width: $tablet) {
+        text-align: left;
+    }
+}
